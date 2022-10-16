@@ -15,6 +15,6 @@ public enum SyncToGiteeOperateTypeEnum implements CodeEnum {
     ADD(1, "新增"),
     UPDATE(2, "更新"),
     DELETE(3, "删除");
-    private Integer code;
-    private String desc;
+    private final Integer code;
+    private final String desc;
 }

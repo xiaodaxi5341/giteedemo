@@ -8,7 +8,10 @@ import com.alibaba.fastjson.JSONObject;
  */
 public abstract class SyncToGiteeRequest {
     /**
-     * 构建同步码云请求参数，对外隐藏具体实现细节     * @param jsonParams 从消息队列中获取到的参数信息     * @param syncType 同步类别：仓库，文件 OR 用户     * @param opType 操作类型：新增，修改 OR 删除     * @return
+     * 构建同步码云请求参数，对外隐藏具体实现细节     *
+     *
+     * @param jsonParams 从消息队列中获取到的参数信息     *
+     * @param extraInfo  一些确定具体处理方案的参数
      */
     public abstract void constructRequestByParams(JSONObject jsonParams, ExtraNecessaryInfo extraInfo);
 }

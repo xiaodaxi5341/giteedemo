@@ -6,6 +6,8 @@ import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Map;
+
 /**
  * 仓库以http方式同步码云请求类 * * @author 韩晓宏IT808481 * @date 2022/10/13 14:21
  */
@@ -56,5 +58,20 @@ public class RepositoryHttpSyncToGiteeRequest extends HttpSyncToGiteeRequest {
     @Override
     protected void internalConstructRequestByParams(JSONObject jsonParams, ExtraNecessaryInfo extraInfo) {
         super.internalConstructRequestByParams(jsonParams, extraInfo);
+    }
+
+    @Override
+    public Map<String, Object> convertToHttpParam() {
+        return null;
+    }
+
+    @Override
+    protected void constructAddRequest(JSONObject jsonParams, ExtraNecessaryInfo extraInfo) {
+        super.constructAddRequest(jsonParams, extraInfo);
+    }
+
+    @Override
+    protected void constructUpdateRequest(JSONObject jsonParams, ExtraNecessaryInfo extraInfo) {
+        super.constructUpdateRequest(jsonParams, extraInfo);
     }
 }

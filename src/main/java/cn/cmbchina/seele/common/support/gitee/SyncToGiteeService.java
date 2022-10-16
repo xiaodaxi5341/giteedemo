@@ -9,7 +9,7 @@ import cn.cmbchina.seele.common.bo.gitee.response.SyncToGiteeResponse;
  * @author 韩晓宏IT808481
  * @date 2022/10/14 17:21
  */
-public interface SyncToGitee {
+public interface SyncToGiteeService {
 
     public SyncToGiteeResponse syncCode2Gitee(SyncToGiteeRequest syncToGiteeRequest);
 

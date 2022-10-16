@@ -19,7 +19,8 @@ public class ExtraNecessaryInfo {
      */
     private SyncToGiteeOperateTypeEnum opType;
     /**
-     * 文件类型     *     * 同步类别为文件时，不可为空
+     * 文件类型
+     *  同步类别为文件时，不可为空
      */
     private SyncToGiteeFileTypeEnum fileType;
 }
