@@ -1,5 +1,6 @@
-package cn.cmbchina.seele.common.bo.gitee.request.http.factory;
+package cn.cmbchina.seele.common.bo.gitee.request.jgit.factory;
 
+import cn.cmbchina.seele.common.bo.gitee.request.SyncToGiteeRequestFactory;
 import cn.cmbchina.seele.common.bo.gitee.request.http.ExtraNecessaryInfo;
 import cn.cmbchina.seele.common.bo.gitee.request.jgit.JGitSyncToGiteeRequest;
 

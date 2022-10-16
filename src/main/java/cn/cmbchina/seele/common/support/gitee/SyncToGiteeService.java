@@ -1,6 +1,7 @@
 package cn.cmbchina.seele.common.support.gitee;
 
 import cn.cmbchina.seele.common.bo.gitee.request.SyncToGiteeRequest;
+import cn.cmbchina.seele.common.bo.gitee.request.http.ExtraNecessaryInfo;
 import cn.cmbchina.seele.common.bo.gitee.response.SyncToGiteeResponse;
 
 /**
@@ -11,6 +12,6 @@ import cn.cmbchina.seele.common.bo.gitee.response.SyncToGiteeResponse;
  */
 public interface SyncToGiteeService {
 
-    public SyncToGiteeResponse syncCode2Gitee(SyncToGiteeRequest syncToGiteeRequest);
+    public <T> SyncToGiteeResponse<T> syncCode2Gitee(SyncToGiteeRequest syncToGiteeRequest, ExtraNecessaryInfo necessaryInfo);
 
 }

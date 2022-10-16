@@ -14,8 +14,8 @@ public class SyncToGiteeResponse<T> {
     private int code;
     private String desc;
 
-    public static SyncToGiteeResponse<Object> simpleSuccess() {
-        SyncToGiteeResponse<Object> objectSyncToGiteeResponse = new SyncToGiteeResponse<>();
+    public static <R> SyncToGiteeResponse<R> simpleSuccess() {
+        SyncToGiteeResponse<R> objectSyncToGiteeResponse = new SyncToGiteeResponse<>();
         objectSyncToGiteeResponse.code = 200;
         objectSyncToGiteeResponse.desc = "success";
         return objectSyncToGiteeResponse;

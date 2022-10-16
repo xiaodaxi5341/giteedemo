@@ -1,6 +1,7 @@
 package cn.cmbchina.seele.common.support.gitee.impl;
 
 import cn.cmbchina.seele.common.bo.gitee.request.SyncToGiteeRequest;
+import cn.cmbchina.seele.common.bo.gitee.request.http.ExtraNecessaryInfo;
 import cn.cmbchina.seele.common.bo.gitee.request.http.HttpSyncToGiteeRequest;
 import cn.cmbchina.seele.common.bo.gitee.response.SyncToGiteeResponse;
 import cn.cmbchina.seele.common.constant.RestCodeEnum;
@@ -9,19 +10,17 @@ import cn.cmbchina.seele.common.exception.GlobalException;
 import cn.cmbchina.seele.common.support.gitee.SyncToGiteeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
 
-@Service
 public class HttpSyncToGiteeServiceImpl implements SyncToGiteeService {
 
     @Autowired
-    private RestTemplate restTemplate;
+    protected RestTemplate restTemplate;
 
     @Override
-    public SyncToGiteeResponse<?> syncCode2Gitee(SyncToGiteeRequest syncToGiteeRequest) {
+    public <T> SyncToGiteeResponse<T> syncCode2Gitee(SyncToGiteeRequest syncToGiteeRequest, ExtraNecessaryInfo necessaryInfo) {
         HttpSyncToGiteeRequest httpSyncToGiteeRequest = (HttpSyncToGiteeRequest) syncToGiteeRequest;
         Map<String, Object> params = httpSyncToGiteeRequest.convertToHttpParam();
         ResponseEntity<Object> responseEntity;
@@ -40,7 +39,7 @@ public class HttpSyncToGiteeServiceImpl implements SyncToGiteeService {
 
     }
 
-    protected SyncToGiteeResponse<?> internalProcessResponse(ResponseEntity<Object> responseEntity){
+    protected <T> SyncToGiteeResponse<T> internalProcessResponse(ResponseEntity<Object> responseEntity){
         return SyncToGiteeResponse.simpleSuccess();
     }
 }
